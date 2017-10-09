@@ -9,11 +9,11 @@ var mailOptions = {
     to: 'ak.goyal1987@gmail.com', // list of receivers
     subject: 'Hello ✔', // Subject line
     text: 'Hello world ?', // plaintext body
-    attachments : [{
-        filename: 'package.json',
-        path: 'E:\\Examples\\nodemailer-example\\package.json',
-        contentType: 'application/json'
-    }],
+    // attachments : [{
+    //     filename: 'package.json',
+    //     path: 'E:\\Examples\\nodemailer-example\\package.json',
+    //     contentType: 'application/json'
+    // }],
     html: '<b>Hello world ?</b>' // html body
 };
 
