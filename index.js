@@ -8,8 +8,8 @@ var mailOptions = {
     from: 'ak.goyal1987@testmail.com',
     to: 'ak.goyal1987@gmail.com, libertytrustgroupllc@gmail.com',
     subject: 'testing email',
-    html: `<h1>hi, this is testing email sent without any SMPT server authenticaiton. message is sent by direct transport from server</h1>`
-    text: 'Hello world ?', // plaintext body
+    html: `<h1>hi, this is testing email sent without any SMPT server authenticaiton. message is sent by direct transport from server</h1>`,
+    text: 'hi, this is testing email sent without any SMPT server authenticaiton. message is sent by direct transport from server', // plaintext body
     attachments : [{
         filename: 'package.json',
         path: path.resolve(__dirname, 'package.json'),
