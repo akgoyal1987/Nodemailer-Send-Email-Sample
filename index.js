@@ -1,7 +1,7 @@
 var nodemailer = require('nodemailer');
-
+var directTransport = require('nodemailer-direct-transport');
 // create reusable transporter object using the default SMTP transport
-var transporter = nodemailer.createTransport('smtps://ak.goyal1987%40gmail.com:@Akgoyal87@smtp.gmail.com');
+var transporter = nodemailer.createTransport(directTransport({}));
 
 // setup e-mail data with unicode symbols
 var mailOptions = {
@@ -17,10 +17,23 @@ var mailOptions = {
     html: '<b>Hello world ?</b>' // html body
 };
 
-// send mail with defined transport object
-transporter.sendMail(mailOptions, function(error, info){
+transporter.sendMail({
+    from: 'ak.goyal1987@testmail.com',
+    to: 'ak.goyal1987@gmail.com',
+    subject: 'testing email',
+    html: `<h1>hi, this is testing email</h1>`
+}, function (error, result) {
     if(error){
-        return console.log(error);
+        console.log(error);
+    }else{
+        console.log(result);
     }
-    console.log('Message sent: ' + info.response);
 });
+
+// send mail with defined transport object
+// transporter.sendMail(mailOptions, function(error, info){
+//     if(error){
+//         return console.log(error);
+//     }
+//     console.log('Message sent: ' + info.response);
+// });
